@@ -1,16 +1,29 @@
-# ca202_ch6
+# Flutter and Firebase Authentication
 
-A new Flutter project.
+## Login Screen
+
+<img src="login_screen.png" alt="Login Screen" width="200">
+
+## Description
+
+This is a Flutter app that demonstrates Firebase authentication. The app allows users to sign up, sign in, sign out, and reset their password using Firebase Authentication.
+
+
+## Features
+
+- User Registration: Allow users to create a new account.
+- User Authentication: Enable users to sign in with their credentials.
+- Password Reset: Allow users to reset their password if forgotten.
+- Sign Out: Provide an option for users to sign out.
+
+## Technologies Used
+
+- Flutter: A UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.
+- Firebase Authentication: Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone the repository:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```bash
+   git clone https://github.com/Badrudin-cloud/flutter-firebase-authentication.git
