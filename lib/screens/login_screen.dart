@@ -17,15 +17,15 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.lock, color: Colors.deepPurple, size: 100,),
-            SizedBox(height: 15,),
+            const Icon(Icons.lock, color: Colors.deepPurple, size: 100,),
+            const SizedBox(height: 15,),
 
-            Text("Login", style: TextStyle(color: Colors.deepPurple, fontSize: 40, fontWeight: FontWeight.bold),),
-            SizedBox(height: 15,),
-            Text("Welcome back dear user😍", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-            SizedBox(height: 15,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const Text("Login", style: TextStyle(color: Colors.deepPurple, fontSize: 40, fontWeight: FontWeight.bold),),
+            const SizedBox(height: 15,),
+            const Text("Welcome back dear user😍", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+            const SizedBox(height: 15,),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 decoration: InputDecoration(
                     hintText: "Enter E-mail",
@@ -46,14 +46,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 obscureText: isHidden,
                 decoration: InputDecoration(
                     hintText: "********",
-                    prefixIcon: Icon(Icons.vpn_key, color: Colors.deepPurple,),
+                    prefixIcon: const Icon(Icons.vpn_key, color: Colors.deepPurple,),
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
@@ -62,13 +62,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                       icon: Icon(isHidden ? Icons.visibility_off : Icons.visibility, color: Colors.deepPurple,),
                     ),
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                         borderSide: BorderSide(
                             color: Colors.deepPurple
                         ),
                         borderRadius: BorderRadius.all(Radius.circular(15))
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(
                             color: Colors.deepPurple,
                             width: 2
@@ -78,9 +78,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 15,),
-            Padding(
-              padding: const EdgeInsets.only(right: 20),
+            const SizedBox(height: 15,),
+            const Padding(
+              padding: EdgeInsets.only(right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             GestureDetector(
               onTap: (){
                 print("Pressed!");
@@ -96,18 +96,18 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 width: double.infinity,
 
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.deepPurple,
                   borderRadius: BorderRadius.all(Radius.circular(15))
                 ),
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                padding: EdgeInsets.symmetric(vertical: 15),
-                child: Center(child: Text("Sign In", style: TextStyle(fontSize: 20, color: Colors.white),)),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: const Center(child: Text("Sign In", style: TextStyle(fontSize: 20, color: Colors.white),)),
               ),
             ),
-            SizedBox(height: 15,),
-            Padding(
-              padding: const EdgeInsets.only(right: 20),
+            const SizedBox(height: 15,),
+            const Padding(
+              padding: EdgeInsets.only(right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
