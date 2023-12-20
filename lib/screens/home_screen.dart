@@ -15,7 +15,6 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Welcome"),
             GestureDetector(
               onTap: () async {
                 try{

@@ -140,7 +140,6 @@ class _LoginScreenState extends State<LoginScreen> {
             GestureDetector(
               onTap: () async {
                 try{
-                  print("Before");
                   await FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
                   clearFields();
                 }catch(e){

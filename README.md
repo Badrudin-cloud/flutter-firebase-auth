@@ -2,7 +2,15 @@
 
 ## Login Screen
 
-<img src="login_screen.png" alt="Login Screen" width="200">
+<img src="./screenshots/login_screen.png" alt="Login Screen" width="200">
+
+## Registration Screen
+
+<img src="./screenshots/register_screen.png" alt="Register Screen" width="200">
+
+## Reset Screen
+
+<img src="./screenshots/reset_screen.png" alt="Reset Screen" width="200">
 
 ## Description
 
