@@ -1,20 +1,19 @@
-import 'package:ca202_ch6/screens/register_screen.dart';
-import 'package:ca202_ch6/screens/reset_screen.dart';
+import 'package:ca202_ch6/screens/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  bool isHidden = true;
+class _RegisterScreenState extends State<RegisterScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
+  bool isHidden = true;
 
   clearFields(){
     _emailController.clear();
@@ -28,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Icon(
-              Icons.lock,
+              Icons.save,
               color: Colors.deepPurple,
               size: 100,
             ),
@@ -36,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 15,
             ),
             const Text(
-              "Login",
+              "Register",
               style: TextStyle(
                   color: Colors.deepPurple,
                   fontSize: 40,
@@ -46,15 +45,16 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 15,
             ),
             const Text(
-              "Welcome back dear user😍",
+              "Register with e-mail and password!",
               style: TextStyle(fontSize: 18),
             ),
             const SizedBox(
               height: 15,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
+                controller: _emailController,
                 decoration: InputDecoration(
                     hintText: "Enter E-mail",
                     prefixIcon: Icon(
@@ -79,59 +79,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _passwordController,
                 obscureText: isHidden,
                 decoration: InputDecoration(
-                  hintText: "********",
-                  prefixIcon: const Icon(
-                    Icons.vpn_key,
-                    color: Colors.deepPurple,
-                  ),
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        isHidden = !isHidden;
-                      });
-                    },
-                    icon: Icon(
-                      isHidden ? Icons.visibility_off : Icons.visibility,
+                    hintText: "********",
+                    prefixIcon: const Icon(
+                      Icons.vpn_key,
                       color: Colors.deepPurple,
                     ),
-                  ),
-                  border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.deepPurple),
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                  focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepPurple, width: 2),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const ResetScreen(),
-                        ),
-                      );
-                    },
-                    child: const Text(
-                      "Forget Password?",
-                      style: TextStyle(
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isHidden = !isHidden;
+                        });
+                      },
+                      icon: Icon(
+                        isHidden ? Icons.visibility_off : Icons.visibility,
                         color: Colors.deepPurple,
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )
-                ],
+                    border: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepPurple),
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 2),
+                        borderRadius: BorderRadius.all(Radius.circular(15)))),
               ),
             ),
             const SizedBox(
@@ -140,8 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
             GestureDetector(
               onTap: () async {
                 try{
-                  print("Before");
-                  await FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+                  await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
                   clearFields();
                 }catch(e){
                   print(e);
@@ -156,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 child: const Center(
                     child: Text(
-                  "Sign In",
+                  "Sign Up",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 )),
               ),
@@ -165,21 +134,21 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 15,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: EdgeInsets.only(right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account? "),
+                  const Text("have an account? "),
                   InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const RegisterScreen()));
+                          builder: (context) => const LoginScreen()));
                     },
                     child: const Text(
-                      "Register now!",
+                      "Login!",
                       style: TextStyle(
                           color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,),
                     ),
                   )
                 ],
